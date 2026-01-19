@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate QR Code For Digital Restaurant Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="">Generate QR Code</a>
+        </div>
+    </nav>
+
+    <!-- QR CODE FORM -->
+    <!-- {% load crispy_forms_tags %} -->
+    <div class="container mt-5 w-50 border border-secondary border-3 p-5 rounded-5 shadow-lg">
+        <form action="{% url 'generate_qr_code' %}" method="POST">
+        {% csrf_token %}
+
+        <!-- {{ form | crispy }} -->
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Generate QR Code</button>
+    </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
